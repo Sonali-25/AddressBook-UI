@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.header {
+    padding: 15px 0;
+    background-color: #ffffff;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 0px solid green;
+    width: 80%;
+}
+
+.logo-content-img {
+    border: solid 0px #42515f;
+    max-width: 7%;
+    height: auto;
+    padding: 10px;
+}
+
+.contact-text {
+    font: normal normal bold 22px/25px Montserrat;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0px;
+    color: #008cff;
+    text-transform: capitalize;
+}
+
+.address-book {
+    color: #19c95d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.form-content {
+    min-height: calc(100%-80px);
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+    padding: 5px;
+}
+
+.form {
+    width: 60%;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px solid #00000029;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    opacity: 1;
+    padding: 44px 60px;
+    border: 1px solid black;
+}
+
+.form-head {
+    font: normal normal normal 28px/37px Roboto;
+    letter-spacing: 0px;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    color: #FFFFFF;
+    text-transform: capitalize;
+    opacity: 1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 70px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: left;
+    border: 0px solid green;
+}
+
+.column1-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border: 0px solid green;
+}
+
+.label {
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #42515F;
+    opacity: 1;
+    margin-bottom: 1%;
+    padding-top: 20px;
+}
+
+.input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
+    height: 43px;
+    padding: 10px;
+}
+
+.text {
+    font-size: 16px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+error-output {
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.select {
+    padding: 12px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+.buttonParent {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: end;
+    align-items: right;
+    margin-top: 20px;
+    flex-direction: column-reverse;
+}
+
+.button {
+    font: normal normal normal 20px/26px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    opacity: 1;
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #969696;
+    cursor: pointer;
+}
+
+.submit-reset {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin: 20px;
+    margin-right: 70px;
+}
+.submitButton {
+    align-items: flex-end;
+    margin-right: 30px ;
+}
+
+.submitButton:hover{
+    background-color: #008CFF;
+    color: white;
+}
+.resetButton:hover{
+    background:grey;
+    color: white;
+}
