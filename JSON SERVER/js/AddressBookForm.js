@@ -1,4 +1,5 @@
 let contactObj = new Contact();
+let isUpdate = false;
 window.addEventListener("DOMContentLoaded", (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector(".text-error");
@@ -30,11 +31,17 @@ window.addEventListener("DOMContentLoaded", (event) => {
 const save = () => {
     try {
         setContactObject();
-        createAndUpdateStorage();
+        if(site_properties.use_local_storage.match("true")){
+            createAndUpdateStorage();
+            alert("Data Stored With Name "+addressBookObject._name);
+            resetForm();
+            window.location.replace(site_properties.home_page)
+        }else
+            createOrUpdatePersonInJsonServer();
     } catch (e) {
+        console.log(e);
         return;
     }
-    alert(contactObj.toString());
 }
 
 const resetForm = () => {
@@ -59,6 +66,37 @@ const setContactObject = ()=>{
         alert("Please enter valid details!");
     }
 }
+function createOrUpdatePersonInJsonServer() {
+    let url=site_properties.server_url;
+    let methodCall="POST";
+    let message="Data Store with name ";
+    if(isUpdate){
+        methodCall="PUT";
+        url=url+contactObj.id.toString();
+         message="Data Updated with name ";
+    }
+    makeServiceCall(methodCall,url,true,contactObj)
+        .then(response=>{
+            alert(message +contactObj._name)
+            resetForm();
+            window.location.replace(site_properties.home_page);
+        })
+        .catch(error=>{
+            console.log("inside error")
+            throw error
+        });
+}
+const getInputValueId = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+
+const setTextValue = (id, value) => {
+    const textError = document.querySelector(id);
+    textError.textContent = value;
+}
+
 
 //Generating contact id for all objects
 const createNewContactId = () => {
@@ -73,6 +111,7 @@ const createAndUpdateStorage = ()=>{
     if(contactList){
         let contactData = contactList.find(contact=>contact._id ==contactObj._id);
         if(!contactData){
+            node._id=createNewContactId();
             contactList.push(contactObj);
         } else {
             const index = contactList.map(contact=>contact._id).indexOf(contactObj._id);
